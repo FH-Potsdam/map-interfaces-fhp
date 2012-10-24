@@ -1,6 +1,6 @@
 .DS_Store
-/nbproject/
-/hook
+nbproject/
+hook/
 
 # Leaflet Distribution
 libraries/leaflet

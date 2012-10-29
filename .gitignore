@@ -6,3 +6,7 @@ hook/
 libraries/leaflet
 !libraries/leaflet/dist/
 !libraries/leaflet/LICENSE
+
+*.sublime-workspace
+
+*.sublime-project

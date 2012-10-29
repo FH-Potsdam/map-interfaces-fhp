@@ -70,8 +70,7 @@ var ste = new L.StamenTileLayer("terrain");
 var stw = new L.StamenTileLayer("watercolor");
 
 //TileMill via MapBox
-
-var osm = new L.TileLayer('http://a.tiles.mapbox.com/v3/juli84.map-xf9ni6a1/{z}/{x}/{y}.png');
+var tml = new L.TileLayer('http://a.tiles.mapbox.com/v3/juli84.map-xf9ni6a1/{z}/{x}/{y}.png');
 
 /**
  * Die einzelnen Layer werden in Variablen gespeichert und später über die "Control" automatisch

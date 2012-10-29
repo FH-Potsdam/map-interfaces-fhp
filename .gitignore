@@ -6,3 +6,7 @@ hook/
 libraries/leaflet
 !libraries/leaflet/dist/
 !libraries/leaflet/LICENSE
+
+maps-interfaces-fhp.sublime-project
+
+maps-interfaces-fhp.sublime-workspace

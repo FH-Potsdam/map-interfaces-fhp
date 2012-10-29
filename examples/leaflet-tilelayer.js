@@ -69,6 +69,8 @@ var ste = new L.StamenTileLayer("terrain");
 //Stamen: WaterColor
 var stw = new L.StamenTileLayer("watercolor");
 
+//TileMill via MapBox
+var tml = new wax.leaf.connector('http://a.tiles.mapbox.com/v3/juli84.map-xf9ni6a1.jsonp');
 
 /**
  * Die einzelnen Layer werden in Variablen gespeichert und später über die "Control" automatisch
@@ -78,4 +80,4 @@ var stw = new L.StamenTileLayer("watercolor");
 
 map.addLayer(osm);
 
-map.addControl(new L.Control.Layers({'CloudMade':clm, 'OSM':osm, 'Mapnik':mpn, 'MapQuest':qst, 'Scanex':wms, 'Google-Hybrid':gmh, 'Google-Satellite':gms, 'Google-Roadmap':gmr, 'Stamen-Toner':sto, 'Stamen-Terrain':ste, 'Stamen-Watercolor':stw}));
+map.addControl(new L.Control.Layers({'TileMill-via-MapBox':tml, 'CloudMade':clm, 'OSM':osm, 'Mapnik':mpn, 'MapQuest':qst, 'Scanex':wms, 'Google-Hybrid':gmh, 'Google-Satellite':gms, 'Google-Roadmap':gmr, 'Stamen-Toner':sto, 'Stamen-Terrain':ste, 'Stamen-Watercolor':stw}));

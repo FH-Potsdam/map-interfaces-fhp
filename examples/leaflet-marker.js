@@ -37,3 +37,23 @@ var map = L.map('map', {
 L.tileLayer('http://{s}.tile.cloudmade.com/5c5f709891f240bbba32d5f42f1926ec/997/256/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 }).addTo(map);
+
+
+/**
+ * Step 3: Zu unserer eben hinzugefügten Karten wird nun ein Marker ergänzt
+ * L.marker([Latitude, Longitude], [options]) erstellt einen Marker an der Position Latitude/Longitude.
+ * mit addMap(map) wird dieser Marker dann zu unserer Karte hinzugefügt.
+ * Mit customIcon können wir dem Marker ein eigenes Aussehen verleihen.
+ * Hierzu müssen wir ein L.Icon Objekt anlegen und Bilder für Icon und Shadow 
+ * definieren sowie die dazugehörigen Ankerpunkte.
+ */
+
+var customIcon = new L.Icon( iconUrl: '../images/burger-marker.png',
+    iconSize: [53, 51],
+    iconAnchor: [27, 51],
+    popupAnchor: [0, 0],
+    shadowUrl: '../images/burger-shadow.png',
+    shadowSize: [83, 51],
+    shadowAnchor: [27, 51]);
+
+L.marker([50.5, 30.5], {icon: customIcon).addTo(map);

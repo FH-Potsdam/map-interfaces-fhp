@@ -56,4 +56,4 @@ var customIcon = new L.Icon( iconUrl: '../images/burger-marker.png',
     shadowSize: [83, 51],
     shadowAnchor: [27, 51]);
 
-L.marker([50.5, 30.5], {icon: customIcon).addTo(map);
+L.marker([52.52, 13.4], {icon: customIcon).addTo(map);

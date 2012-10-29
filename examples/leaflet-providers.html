@@ -56,22 +56,22 @@
 
 			<!-- Main hero unit for a primary marketing message or call to action -->
 			<div class="hero-unit">
-				<h1>Leaflet Basics</h1>
-				<p>Grundlegendes Setup einer interaktiven Karte im Browser mit Leaflet. <a href="http://leaflet.cloudmade.com/">Leaflet</a> ist eine Javascript Bibliothek mit der wir einfach interaktive Karten in Webseiten einbinden können. Neben Leaflet existieren auch andere Bibliotheken die ähnliches können, beispielsweise <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a>, <a href="http://polymaps.org/">PolyMaps</a> oder <a href="http://www.openlayers.org/">OpenLayers</a>.</p>
+				<h1>Kartenprovider</h1>
+				<p>Setup einer interaktiven Karte mit Leaflet mit verschiedenen Kartendarstellung die von unterschiedlichen Kartenprovidern geliefert werden.</p>
 				<!--<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
 			</div>
 
 			<div class="row">
 				<div class="span12">
-					<iframe class="map" src="leaflet-basic-clean.html"></iframe>
+					<iframe class="map" src="leaflet-providers-clean.html"></iframe>
 				</div>
 				<div class="span12">
-					<a href="leaflet-basic-clean.html">Nur das Beispiel anzeigen</a>
+					<a href="leaflet-providers-clean.html">Nur das Beispiel anzeigen</a>
 				</div>
 			</div>
 			<div class="row">
 				<div class="span12">
-					Ein ganz einfaches Setup für eine interaktive Karte mit Leaflet besteht aus einer HTML-Datei (beispielsweise index.html), einer JavaScript-Datei (bsp. map.js) und der Leaflet Bibliothek die man sich herunterladen kann.
+					In diesem schon etwas komplexeren Beispiel benötigen wir ein paar mehr Libraries um Stamen einzubinden (http://maps.stamen.com/js/tile.stamen.js), ebenso auch bei Google (http://maps.google.com/maps/api/js?v=3.2&sensor=false + https://raw.github.com/gist/2197042/2b90c41b39b7d5b3a851d8f256de2ebd3fe1fb74/leaflet-google.js) hinzu kommen eine HTML-Datei (beispielsweise index.html), eine JavaScript-Datei (bsp. map.js) und die Leaflet Bibliothek die man sich herunterladen kann.
 				</div>
 			</div>
 			<div class="row">
@@ -86,6 +86,11 @@
 		&lt;title&gt;Leaflet Basic Setup&lt;/title&gt;
 		&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;leaflet/dist/leaflet.css&quot;&gt;
 		&lt;script type=&quot;text/javascript&quot; src=&quot;leaflet/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+
+		&lt;script type=&quot;text/javascript&quot; src=&quot;http://maps.stamen.com/js/tile.stamen.js?v1.2.0&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;http://maps.google.com/maps/api/js?v=3.2&sensor=false&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;https://raw.github.com/gist/2197042/2b90c41b39b7d5b3a851d8f256de2ebd3fe1fb74/leaflet-google.js&quot;&gt;&lt;/script&gt;
+
 		&lt;style&gt;
 			html, body { margin:0; padding: 0; }
 			#map { min-height: 400px; }
@@ -108,7 +113,25 @@
 	zoom : 13
 });
 
-L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png').addTo(map);</pre>
+var clm = L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+});
+
+var osm = new L.TileLayer('http://{s}.tile.osmosnimki.ru/kosmo/{z}/{x}/{y}.png');
+var mpn = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+var qst = new L.TileLayer('http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {attribution:'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'});
+var wms = new L.TileLayer.WMS('http://wms.latlon.org/', {layers:'irs', crs: L.CRS.EPSG4326});
+var gmr = new L.Google("ROADMAP");
+var gms = new L.Google("SATELLITE");
+var gmh = new L.Google("HYBRID");
+var sto = new L.StamenTileLayer("toner");
+var ste = new L.StamenTileLayer("terrain");
+var stw = new L.StamenTileLayer("watercolor");
+var tml = new L.TileLayer('http://a.tiles.mapbox.com/v3/[MapBox-API-Key]/{z}/{x}/{y}.png');
+
+map.addLayer(osm);
+
+map.addControl(new L.Control.Layers({'TileMill-via-MapBox':tml, 'CloudMade':clm, 'OSM':osm, 'Mapnik':mpn, 'MapQuest':qst, 'Scanex':wms, 'Google-Hybrid':gmh, 'Google-Satellite':gms, 'Google-Roadmap':gmr, 'Stamen-Toner':sto, 'Stamen-Terrain':ste, 'Stamen-Watercolor':stw}));</pre>
 				</div>
 			</div>
 			

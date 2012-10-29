@@ -56,22 +56,22 @@
 
 			<!-- Main hero unit for a primary marketing message or call to action -->
 			<div class="hero-unit">
-				<h1>Leaflet Basics</h1>
-				<p>Grundlegendes Setup einer interaktiven Karte im Browser mit Leaflet. <a href="http://leaflet.cloudmade.com/">Leaflet</a> ist eine Javascript Bibliothek mit der wir einfach interaktive Karten in Webseiten einbinden können. Neben Leaflet existieren auch andere Bibliotheken die ähnliches können, beispielsweise <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a>, <a href="http://polymaps.org/">PolyMaps</a> oder <a href="http://www.openlayers.org/">OpenLayers</a>.</p>
+				<h1>Marker setzen</h1>
+				<p>Erstellen eines Markers mit angepasstem Icon und Schatten.</p>
 				<!--<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
 			</div>
 
 			<div class="row">
 				<div class="span12">
-					<iframe class="map" src="leaflet-basic-clean.html"></iframe>
+					<iframe class="map" src="leaflet-markers-clean.html"></iframe>
 				</div>
 				<div class="span12">
-					<a href="leaflet-basic-clean.html">Nur das Beispiel anzeigen</a>
+					<a href="leaflet-markers-clean.html">Nur das Beispiel anzeigen</a>
 				</div>
 			</div>
 			<div class="row">
 				<div class="span12">
-					Ein ganz einfaches Setup für eine interaktive Karte mit Leaflet besteht aus einer HTML-Datei (beispielsweise index.html), einer JavaScript-Datei (bsp. map.js) und der Leaflet Bibliothek die man sich herunterladen kann.
+					Das Beispiel für das setzen eines angepassten Markers besteht aus je einem PNG für Icon und Schatten die einen transparenten Hintergrund haben, sowie einer HTML-Datei (beispielsweise index.html), einer JavaScript-Datei (bsp. map.js) und der Leaflet Bibliothek die man sich herunterladen kann.
 				</div>
 			</div>
 			<div class="row">
@@ -108,7 +108,19 @@
 	zoom : 13
 });
 
-L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png').addTo(map);</pre>
+L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png').addTo(map);
+
+var customIcon = new L.Icon( {
+	iconUrl: '../img/burger-marker.png',
+    iconSize: [53, 51],
+    iconAnchor: [27, 51],
+    popupAnchor: [0, 0],
+    shadowUrl: '../img/burger-shadow.png',
+    shadowSize: [83, 51],
+    shadowAnchor: [27, 51]
+});
+
+L.marker([52.52, 13.4], {icon: customIcon }).addTo(map);</pre>
 				</div>
 			</div>
 			

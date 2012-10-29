@@ -67,7 +67,7 @@ var sto = new L.StamenTileLayer("toner");
 var ste = new L.StamenTileLayer("terrain");
 
 //Stamen: WaterColor
-var swc = new L.StamenTileLayer("watercolor");
+var stw = new L.StamenTileLayer("watercolor");
 
 
 /**

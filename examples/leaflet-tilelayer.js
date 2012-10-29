@@ -51,8 +51,14 @@ var qst = new L.TileLayer('http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.p
 //Scanex
 var wms = new L.TileLayer.WMS('http://wms.latlon.org/', {layers:'irs', crs: L.CRS.EPSG4326});
 
-//Google
-var gm = new L.Google();
+//Google-Roadmap
+var gmr = new L.Google("ROADMAP");
+
+//Google-Satellite
+var gms = new L.Google("SATELLITE");
+
+//Google-Hybrid
+var gmh = new L.Google("HYBRID");
 
 //Stamen: Toner
 var sto = new L.StamenTileLayer("toner");
@@ -72,4 +78,4 @@ var swc = new L.StamenTileLayer("Watercolor");
 
 map.addLayer(osm);
 
-map.addControl(new L.Control.Layers({'CloudMade':clm, 'OSM':osm, 'Mapnik':mpn, 'MapQuest':qst, 'Scanex':wms, 'Google':gm, 'Stamen-Toner':sto, 'Stamen-Terrain':ste, 'Stamen-Watercolor':stw}));
+map.addControl(new L.Control.Layers({'CloudMade':clm, 'OSM':osm, 'Mapnik':mpn, 'MapQuest':qst, 'Scanex':wms, 'Google-Hybrid':gmh, 'Google-Satellite':gms, 'Google-Roadmap':gmr, 'Stamen-Toner':sto, 'Stamen-Terrain':ste, 'Stamen-Watercolor':stw}));

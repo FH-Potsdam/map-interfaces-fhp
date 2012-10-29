@@ -58,4 +58,4 @@ var customIcon = new L.Icon( {
     shadowAnchor: [27, 51]
 });
 
-L.marker([52.52, 13.4], {icon: customIcon).addTo(map);
+L.marker([52.52, 13.4], {icon: customIcon }).addTo(map);

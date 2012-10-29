@@ -48,12 +48,14 @@ L.tileLayer('http://{s}.tile.cloudmade.com/5c5f709891f240bbba32d5f42f1926ec/997/
  * definieren sowie die dazugehörigen Ankerpunkte.
  */
 
-var customIcon = new L.Icon( iconUrl: '../images/burger-marker.png',
+var customIcon = new L.Icon( {
+	iconUrl: '../img/burger-marker.png',
     iconSize: [53, 51],
     iconAnchor: [27, 51],
     popupAnchor: [0, 0],
-    shadowUrl: '../images/burger-shadow.png',
+    shadowUrl: '../img/burger-shadow.png',
     shadowSize: [83, 51],
-    shadowAnchor: [27, 51]);
+    shadowAnchor: [27, 51]
+});
 
 L.marker([52.52, 13.4], {icon: customIcon).addTo(map);

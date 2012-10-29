@@ -7,6 +7,12 @@ libraries/leaflet
 !libraries/leaflet/dist/
 !libraries/leaflet/LICENSE
 
+<<<<<<< HEAD
 *.sublime-workspace
 
 *.sublime-project
+=======
+maps-interfaces-fhp.sublime-project
+
+maps-interfaces-fhp.sublime-workspace
+>>>>>>> gh-pages

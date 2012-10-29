@@ -46,6 +46,8 @@ L.tileLayer('http://{s}.tile.cloudmade.com/5c5f709891f240bbba32d5f42f1926ec/997/
  * Mit customIcon können wir dem Marker ein eigenes Aussehen verleihen.
  * Hierzu müssen wir ein L.Icon Objekt anlegen und Bilder für Icon und Shadow 
  * definieren sowie die dazugehörigen Ankerpunkte.
+ * iconSize definiert die Größe von Schatten und Marker
+ * iconAnchor definiert der Punkt an dem das ganze an der GPS-Koordination angelegt wird ausgehend von links oben.
  */
 
 var customIcon = new L.Icon( {

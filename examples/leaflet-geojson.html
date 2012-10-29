@@ -56,17 +56,17 @@
 
 			<!-- Main hero unit for a primary marketing message or call to action -->
 			<div class="hero-unit">
-				<h1>Leaflet Basics</h1>
-				<p>Grundlegendes Setup einer interaktiven Karte im Browser mit Leaflet. <a href="http://leaflet.cloudmade.com/">Leaflet</a> ist eine Javascript Bibliothek mit der wir einfach interaktive Karten in Webseiten einbinden können. Neben Leaflet existieren auch andere Bibliotheken die ähnliches können, beispielsweise <a href="https://developers.google.com/maps/documentation/javascript/">Google Maps API</a>, <a href="http://polymaps.org/">PolyMaps</a> oder <a href="http://www.openlayers.org/">OpenLayers</a>.</p>
+				<h1>Leaflet GeoJSON</h1>
+				<p><a href="http://www.geojson.org/geojson-spec.html">GeoJSON ist ein Format</a> zur schnellen Übertragung von Geodaten und wird häufig in Zusammenhang mit öffentlichen Softwareschnittstellen von Webdiensten wie FourSquare, Faceboox, Qype und anderen eingesetzt.</p>
 				<!--<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
 			</div>
 
 			<div class="row">
 				<div class="span12">
-					<iframe class="map" src="leaflet-basic-clean.html"></iframe>
+					<iframe class="map" src="leaflet-geojson-clean.html"></iframe>
 				</div>
 				<div class="span12">
-					<a href="leaflet-basic-clean.html">Nur das Beispiel anzeigen</a>
+					<a href="leaflet-geojson-clean.html">Nur das Beispiel anzeigen</a>
 				</div>
 			</div>
 			<div class="row">
@@ -79,23 +79,7 @@
 					index.html
 				</div>				
 				<div class="span12">
-					<pre>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-	&lt;head&gt;
-		&lt;meta charset=&quot;utf-8&quot;&gt;
-		&lt;title&gt;Leaflet Basic Setup&lt;/title&gt;
-		&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;leaflet/dist/leaflet.css&quot;&gt;
-		&lt;script type=&quot;text/javascript&quot; src=&quot;leaflet/dist/leaflet.js&quot;&gt;&lt;/script&gt;
-		&lt;style&gt;
-			html, body { margin:0; padding: 0; }
-			#map { min-height: 400px; }
-		&lt;/style&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-		&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
-		&lt;script type=&quot;text/javascript&quot; src=&quot;map.js&quot;&gt;&lt;/script&gt;
-	&lt;/body&gt;
-&lt;/html&gt;</<pre>
+					<pre></<pre>
 				</div>
 			</div>
 			<div class="row">
@@ -103,12 +87,7 @@
 					map.js
 				</div>								
 				<div class="span12">
-					<pre>var map = L.map('map', {
-	center : [52.52, 13.4],
-	zoom : 13
-});
-
-L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png').addTo(map);</pre>
+					<pre></pre>
 				</div>
 			</div>
 			

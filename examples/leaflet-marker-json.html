@@ -71,7 +71,7 @@
 			</div>
 			<div class="row">
 				<div class="span12">
-					Normalerweise würde man einen JSON File von einer API oder einer anderen externen Quelle bzw. Datenbank laden, in diesem Falle werden die JSON Daten direkt ins Script eingefügt.
+					Normalerweise würde man einen JSON File von einer API oder einer anderen externen Quelle bzw. Datenbank laden, in diesem Falle werden die JSON Daten direkt ins Script eingefügt. Zusätzlich zu den üblichen Dateien benötigen wir für dieses Beispiel noch die jQuery-Library.
 				</div>
 			</div>
 			<div class="row">
@@ -110,7 +110,7 @@
 
 L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png').addTo(map);
 
-var markerList = eval('[PASTE JSON HERE]');
+var markerList = jQuery.parseJSON('[PASTE JSON HERE]');
 for(i=0;i&lt;markerList.length;i++){
 	L.marker([markerList[i].lat,markerList[i].lon]).addTo(map);
 }

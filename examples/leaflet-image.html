@@ -56,8 +56,8 @@
 
 			<!-- Main hero unit for a primary marketing message or call to action -->
 			<div class="hero-unit">
-				<h1>Marker über JSON-File setzen</h1>
-				<p>Laden einer JSON-Datei mit Geo-Informationen zum erstellen von Markern.</p>
+				<h1>Bild Ebene einsetzen</h1>
+				<p>Bild als Overlay innerhalb einer Karte positionieren.</p>
 				<!--<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
 			</div>
 
@@ -71,7 +71,7 @@
 			</div>
 			<div class="row">
 				<div class="span12">
-					Normalerweise würde man einen JSON File von einer API oder einer anderen externen Quelle bzw. Datenbank laden, in diesem Falle werden die JSON Daten direkt ins Script eingefügt. Zusätzlich zu den üblichen Dateien benötigen wir für dieses Beispiel noch die jQuery-Library.
+					Man benötigt neben den Daten aus den vorangegangenen Beispielen ein Bild und die Geokoordinaten für die Bounding-Box. In diesem Fall sind es die Koordinaten von Paris und Moskau.
 				</div>
 			</div>
 			<div class="row">
@@ -105,7 +105,7 @@
 				<div class="span12">
 					<pre>var map = L.map('map', {
 	center : [52.52, 13.4],
-	zoom : 13
+	zoom : 5
 });
 
 L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png').addTo(map);

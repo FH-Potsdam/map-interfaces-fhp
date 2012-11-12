@@ -115,7 +115,7 @@ L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png').a
 
 var markerList = jQuery.parseJSON('[PASTE JSON HERE]');
 for(i=0;i&lt;markerList.length;i++){
-	L.marker([markerList[i].lat,markerList[i].lon]).addTo(map);
+	L.marker([markerList[i].lon,markerList[i].lat]).addTo(map);
 }
 </pre>
 				</div>

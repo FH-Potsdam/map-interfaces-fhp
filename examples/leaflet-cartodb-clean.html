@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Leaflet CartoDB Setup</title>
+		<!-- Dieses Beispiel nutzt die CDN Version (online) der Leaflet Bibliothek. 
+		Dazu muss man beim Ausprobieren der Beispiele online sein. 
+		Wer das nicht möchte kann wieder auf das Setup aus dem Basic Example zurückgreifen. -->
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
+		<!--[if lte IE 8]>
+			<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css" />
+		<![endif]-->
+		<script src="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
+
+		<!-- Here das Leaflet-CartoDB Plugin, welches uns die Arbeit mit CartoDB erleichtert. -->
+		<script type="text/javascript" src="https://raw.github.com/mapbox/wax/master/dist/wax.leaf.min.js"></script>
+		<script type="text/javascript" src="https://raw.github.com/vizzuality/cartodb-leaflet/master/dist/cartodb-leaflet-min.js"></script>		
+		<style>
+			html, body { margin:0; padding: 0; }
+			#map { min-height: 400px; }
+			.licence { font-size: 10px; font-family: sans-serif; }
+		</style>
+	</head>
+	<body>		
+		<div id="map"></div>
+		<div id="overlay">
+			<select size="1" name="bezirk" id="select-bezirk"></select>
+		</div>
+		<div class="licence">
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.de"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Leaflet Basic Setup</span> steht unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.de">Creative Commons - Weitergabe unter gleichen Bedingungen 3.0 Unported Lizenz</a>.
+		</div>
+		<script type="text/javascript" src="leaflet-cartodb.js"></script>
+	</body>
+</html>

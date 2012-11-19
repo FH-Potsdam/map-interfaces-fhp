@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<title>CartoDB APIs – Map Interfaces 2012</title>
+		<!-- Bootstrap -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="../css/custom.css" rel="stylesheet">
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->		
+
+    </head>
+    <body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="#">Map Interfaces</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li><a href="../">Home</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Grundlagen <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li class="nav-header">Leaflet</li>
+									<li><a href="leaflet-basic.html">Leaflet Setup</a></li>
+									<li><a href="leaflet-providers.html">Kartenprovider</a></li>
+									<li><a href="leaflet-markers.html">Marker setzen</a></li>
+									<li><a href="leaflet-marker-json.html">Marker aus JSON</a></li>
+									<li><a href="leaflet-geojson.html">GeoJSON anzeigen</a></li>
+									<li><a href="leaflet-image.html">Bilder einbetten</a></li>
+									<li class="divider"></li>
+									<li class="nav-header">CartoDB</li>
+									<li><a href="leaflet-cartodb.html">CartoDB APIs</a></li>
+								</ul>
+							</li>
+						</ul>
+						<!--						<form class="navbar-form pull-right">
+													<input class="span2" type="text" placeholder="Email">
+													<input class="span2" type="password" placeholder="Password">
+													<button type="submit" class="btn">Sign in</button>
+												</form>-->
+					</div><!--/.nav-collapse -->
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+
+			<!-- Main hero unit for a primary marketing message or call to action -->
+			<div class="hero-unit">
+				<h1>CartoDB APIs</h1>
+				<p>Der einfachste Weg um CartoDB-Daten in Leaflet anzuzeigen ist die Verwendung des Leaflet-Plugins.</p>
+				<!--<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
+			</div>
+
+			<div class="row">
+				<div class="span12">
+					Auf der Webseite findet Ihr <a href="http://developers.cartodb.com/documentation/cartodb-apis.html">eine vollständige Einführung in die CartoDB APIs</a>, dazu gibt es auch viele <a href="http://developers.cartodb.com/examples.html">Beispiele wie man bestimmte Visualisierungen und/oder interaktive Funktionen</a> bauen kann.
+				</div>
+			</div>			
+
+			<div class="row">
+				<div class="span12">
+					<iframe class="map" src="leaflet-cartodb-clean.html"></iframe>
+				</div>
+				<div class="span12">
+					<a href="leaflet-cartodb-clean.html">Nur das Beispiel anzeigen</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					index.html
+				</div>				
+				<div class="span12">
+					<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;
+		&lt;title&gt;Leaflet CartoDB Setup&lt;/title&gt;
+		&lt;!-- Dieses Beispiel nutzt die CDN Version (online) der Leaflet Bibliothek. 
+		Dazu muss man beim Ausprobieren der Beispiele online sein. 
+		Wer das nicht m&ouml;chte kann wieder auf das Setup aus dem Basic Example zur&uuml;ckgreifen. --&gt;
+		&lt;link rel=&quot;stylesheet&quot; href=&quot;http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css&quot; /&gt;
+		&lt;!--[if lte IE 8]&gt;
+			&lt;link rel=&quot;stylesheet&quot; href=&quot;http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css&quot; /&gt;
+		&lt;![endif]--&gt;
+		&lt;script src=&quot;http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js&quot;&gt;&lt;/script&gt;
+
+		&lt;!-- Here das Leaflet-CartoDB Plugin, welches uns die Arbeit mit CartoDB erleichtert. --&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;https://raw.github.com/mapbox/wax/master/dist/wax.leaf.min.js&quot;&gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;https://raw.github.com/vizzuality/cartodb-leaflet/master/dist/cartodb-leaflet-min.js&quot;&gt;&lt;/script&gt;		
+		&lt;style&gt;
+			html, body { margin:0; padding: 0; }
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;		
+		&lt;div id=&quot;map&quot;&gt;&lt;/div&gt;
+		&lt;script type=&quot;text/javascript&quot; src=&quot;leaflet-cartodb.js&quot;&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</<pre>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="span12">
+					Mit dem CartoDB Plugin für Leaflet können wir direkt <em>CartoDBLayer</em> erzeugen, die JavaScript Callbacks wie z.B. <code>featureClick, featureOver, featureOut</code> anbieten. Mit diesen Callbacks können wir Aktionen programmieren, die ausgeführt werden, wenn die Maus auf ein Objekt klickt, der Mauszeiger sich darüber bewegt oder wieder vom Objekt heruntergezogen wird. Voraussetzung dafür ist die Definition der Eigenschaft <code>interactivity</code> beim Erzeugen des Layers. Mehr Informationen zur Nutzung des CartoDB-Plugins finden sich hier: <a href="https://github.com/Vizzuality/cartodb-leaflet">https://github.com/Vizzuality/cartodb-leaflet</a>
+				</div>
+			</div>
+
+			
+			<div class="row">
+				<div class="span12">
+					map.js
+				</div>								
+				<div class="span12">
+					<pre>/**
+ * Step 1: Zuerst muss Leaflet initialisiert werden, der Einfachheit halber speichern wir das Objekt in der Variable "map"
+ * 
+ * L.map('container-id', { options }) erzeugt ein neues Kartenobjekt und injiziert es in das DOM-Element mit der ID "container-id", 
+ * bzw. im Beispiel in unseren DIV-Container mit der ID "map"
+ * 
+ * Optional kann man den Kartenausschnitt auch später mit .setView verändern.
+ * .setView([x,y], zoom) zentriert unsere neue Karte an den angegebenen X-Y-Koordinaten mit der Zoomstufe 13
+ */
+var map = L.map('map', {
+	center : [52.52, 13.4],
+	zoom : 13
+});
+
+
+/**
+ * Step 2: Wir haben nun ein leeres Kartenobjekt und müssen eine Karte hinzufügen. 
+ * Da Karten im Internet in der Regel in kleine Schnipsel, sogenannte "Tiles" (von Kacheln), 
+ * aufgeteilt sind, erzeugen wir zuerst einen TileLayer.
+ * 
+ * Im Beispiel verwenden wir als Quelle für unseren TileLayer eine CloudMade Karte.
+ * 
+ * L.tileLayer('url', { options }) erzeugt einen neuen TileLayer
+ * .addTo(Objekt) fügt den neuen Layer unserer Karte hinzu, im Beispiel "map"
+ * 
+ */
+
+L.tileLayer('http://{s}.tile.cloudmade.com/[API-Key]/997/256/{z}/{x}/{y}.png').addTo(map);
+
+/**
+ * Step 3: Hier erzeugen wir einen speziellen CartoDB-Layer, der direkt Interaktionen unterstützt.
+ */
+
+var cartodb_leaflet = new L.CartoDBLayer({
+	map: map,
+	user_name:'marcus',
+	table_name: 'vbb_stops',
+	query: "SELECT * FROM {{table_name}}",
+	tile_style: "#{{table_name}}{marker-fill:red}",
+	interactivity: "cartodb_id, stop_name",
+	featureClick: function(ev, latlng, pos, data) {
+		alert(data.stop_name);
+	},
+	featureOut: function() {},
+	featureOver: function(ev, latlng, pos, data) {},
+	auto_bound: true,
+	// Diese Infos benötigen wir für unseren Kurs-Server -- einfach löschen, wenn ihr reguläre CartoDB.com Accounts verwendet.
+	sql_domain: 'maps-fhp.de',
+	sql_port: '8080',
+	sql_protocol: 'http',
+	tiler_domain: 'maps-fhp.de',
+	tiler_port: '8181',
+	tiler_protocol: 'http'
+});
+
+map.addLayer(cartodb_leaflet);</pre>
+								</div>
+							</div>
+
+							<hr>
+
+							<footer>
+								<p>&copy; Interfacedesign · FH Potsdam · 2012</p>
+							</footer>
+
+							</div> <!-- /container -->
+
+							<script src="http://code.jquery.com/jquery-latest.js"></script>
+							<script src="../js/bootstrap.min.js"></script>
+							</body>
+							</html>
